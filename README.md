@@ -54,7 +54,7 @@ void main()
 
 ## OUTPUT:
 
-<img width="675" height="976" alt="Screenshot 2026-05-11 090734" src="https://github.com/user-attachments/assets/c5daa396-8d0f-42ec-94c9-a64ef323143c" />
+<img width="344" height="114" alt="Screenshot 2026-05-31 at 21-04-36 Irfanharun1524_EX -NO-1-IMPLEMENTATION-OF-CAESAR-CIPHER" src="https://github.com/user-attachments/assets/40f5b0b2-954b-42f8-879a-124db479819b" />
 
 ## RESULT :
  Thus the implementation of ceasar cipher had been executed successfully.

@@ -15,41 +15,34 @@ STEP-5: Display the cipher text obtained above.
 
 ## PROGRAM:
 ```
-#include <stdio.h> 
-#include <string.h> 
-#include <ctype.h> 
-void main() 
-{ 
-    char plain[10],cipher[10]; 
-    int key,i,length; 
-    int result; 
-    printf("\n Enter the plain text:"); 
-    scanf("%s", plain); 
-    printf("\n Enter the key value:"); 
-    scanf("%d", &key); 
-    printf("\n \n \t PLAIN TEXT: %s", plain); 
-    printf("\n \n \t ENCRYPTED TEXT:"); 
-    for(i=0, length = strlen(plain); i<length; i++) 
-    { 
-        cipher[i]=plain[i] + key; 
-        if (isupper(plain[i]) && (cipher[i] > 'Z')) 
-        cipher[i] = cipher[i] - 26; 
-        if (islower(plain[i]) && (cipher[i] > 'z')) 
-        cipher[i] = cipher[i] - 26; 
-        printf("%c", cipher[i]); 
-    } 
-    printf("\n \n \t AFTER DECRYPTION : "); 
-    for(i=0;i<length;i++) 
-    { 
-        plain[i]=cipher[i]-key; 
-        if(isupper(cipher[i])&&(plain[i]<'A')) 
-        plain[i]=plain[i]+26; 
-        if(islower(cipher[i])&&(plain[i]<'a')) 
-        plain[i]=plain[i]+26; 
-        printf("%c",plain[i]); 
-    } 
-}
+plain = input("\n Enter the plain text: ")
+key = int(input("\n Enter the key value: "))
 
+print("\n \n \t PLAIN TEXT: " + plain)
+print("\n \n \t ENCRYPTED TEXT: ", end="")
+
+cipher = ""
+for i in range(len(plain)):
+    cipher_char = chr(ord(plain[i]) + key)
+    if plain[i].isupper() and ord(cipher_char) > ord('Z'):
+        cipher_char = chr(ord(cipher_char) - 26)
+    if plain[i].islower() and ord(cipher_char) > ord('z'):
+        cipher_char = chr(ord(cipher_char) - 26)
+    cipher += cipher_char
+    print(cipher_char, end="")
+
+print("\n \n \t AFTER DECRYPTION : ", end="")
+decrypted = ""
+for i in range(len(cipher)):
+    decrypted_char = chr(ord(cipher[i]) - key)
+    if cipher[i].isupper() and ord(decrypted_char) < ord('A'):
+        decrypted_char = chr(ord(decrypted_char) + 26)
+    if cipher[i].islower() and ord(decrypted_char) < ord('a'):
+        decrypted_char = chr(ord(decrypted_char) + 26)
+    decrypted += decrypted_char
+    print(decrypted_char, end="")
+
+print() 
 ```
 
 ## OUTPUT:
